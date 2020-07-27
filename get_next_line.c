@@ -6,7 +6,7 @@
 /*   By: lcros-mo <lcros-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/18 00:18:29 by lcros-mo          #+#    #+#             */
-/*   Updated: 2020/07/18 16:02:07 by lcros-mo         ###   ########.fr       */
+/*   Updated: 2020/07/27 17:21:57 by lcros-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static	int	ft_return(char **cache, char **line, int fd, int r)
 {
 	if (r < 0)
 		return (-1);
-	if (ret == 0 && cache[fd] == NULL)
+	if (r == 0 && cache[fd] == NULL)
 	{
 		*line = ft_strdup("");
 		return (0);
@@ -82,7 +82,7 @@ int			get_next_line(int fd, char **line)
 	int				r;
 
 	if (fd < 0 || line == NULL || BUFFER_SIZE < 1 
-    || !(buff = malloc((sizeof(char) * BUFFER_SIZE) + 1)))
+    || !(mem = malloc((sizeof(char) * BUFFER_SIZE) + 1)))
 		return (-1);
 	while ((r = read(fd, mem, BUFFER_SIZE)) > 0)
 	{

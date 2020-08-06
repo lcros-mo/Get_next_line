@@ -6,7 +6,7 @@
 /*   By: lcros-mo <lcros-mo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/18 00:18:29 by lcros-mo          #+#    #+#             */
-/*   Updated: 2020/07/27 17:21:57 by lcros-mo         ###   ########.fr       */
+/*   Updated: 2020/08/06 12:35:42 by lcros-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ int			get_next_line(int fd, char **line)
 	char			*w;
 	int				r;
 
-	if (fd < 0 || line == NULL || BUFFER_SIZE < 1 
-    || !(mem = malloc((sizeof(char) * BUFFER_SIZE) + 1)))
+	if (fd < 0 || line == NULL || BUFFER_SIZE < 1
+		|| !(mem = malloc((sizeof(char) * BUFFER_SIZE) + 1)))
 		return (-1);
 	while ((r = read(fd, mem, BUFFER_SIZE)) > 0)
 	{
